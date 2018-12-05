@@ -20,5 +20,8 @@
   "devDependencies": {
     "node-sass": "^4.10.0",
     "sass": "^1.15.1"
+  },
+  "dependencies": {
+    "npm": "^6.4.1"
   }
 }
