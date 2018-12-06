@@ -14,21 +14,6 @@ body {
 :root {
   font-size: 62.5%; }
 
-.getstarted {
-  width: 300px;
-  height: 45px;
-  background-color: #e1ac4a;
-  text-align: center;
-  border-radius: 5%;
-  box-shadow: 5px 5px rgba(112, 81, 28, 0.6);
-  margin-left: calc(50% - 150px); }
-  .getstarted h2 {
-    font-size: 2.1rem;
-    font-family: 'Oswald';
-    font-weight: 400;
-    color: white;
-    padding: 2%; }
-
 /* MENU HEADER */
 header {
   width: 100vw;
@@ -78,15 +63,62 @@ svg #logo path {
       font-family: 'Amatic Sc';
       font-weight: 700;
       color: white;
-      margin: 0;
       width: 100%;
       height: 100%;
       padding: 25% 15%;
       text-align: center; }
 
+.getstarted {
+  width: 300px;
+  height: 45px;
+  background-color: #e1ac4a;
+  text-align: center;
+  border-radius: 5%;
+  box-shadow: 5px 5px rgba(112, 81, 28, 0.6);
+  margin-left: calc(50% - 150px); }
+  .getstarted h2 {
+    font-size: 2.1rem;
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: white;
+    padding: 2%; }
+
 /* LOGIN */
-.login-form-modal, .register-form-modal {
-  display: none; }
+.cross {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 5%;
+  left: 5%; }
+
+label {
+  display: block; }
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 10vw;
+  margin: 10vw;
+  background-color: #b7decd;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 3%;
+  background-color: #cdcd55;
+  opacity: 0.9;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+  font-weight: 400;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+
+.login-form-modal {
+  grid-column: 1/2; }
+
+.register-form-modal {
+  grid-column: 2/3; }
 
 /* CONTENT */
 main {
@@ -119,12 +151,12 @@ main {
   width: 80%;
   height: 30%;
   display: grid; }
-  .content .forest-button {
+  .content .forest-button, .content .forest-image {
     background-color: #b7decd;
     width: 100%;
     height: 500px;
     border-radius: 3%; }
-    .content .forest-button a {
+    .content .forest-button a, .content .forest-image a {
       font-size: 2.5rem;
       font-family: 'Amatic Sc';
       font-weight: 700;
@@ -137,3 +169,178 @@ main {
 .why-info, .forest-content {
   grid-template-columns: 1fr 1fr;
   grid-gap: 5%; }
+
+/* /////////// PROFILE PAGE ////////////*/
+#myForestsHeader {
+  height: 10vh;
+  background: none;
+  background-color: #11514f; }
+  #myForestsHeader svg #logo path {
+    fill: white; }
+  #myForestsHeader .menu a {
+    color: white; }
+
+.myForestsMain {
+  width: 100vw;
+  height: 90vh;
+  padding: 5% 10%;
+  background-color: #11514f;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2%;
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  z-index: 10; }
+  .myForestsMain nav {
+    width: 100%;
+    height: 10%;
+    display: grid; }
+
+.myForests {
+  background-color: #b7decd;
+  width: 100%;
+  height: 100%;
+  border-radius: 3%; }
+  .myForests nav {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: fit-content; }
+    .myForests nav a {
+      font-size: 2.1rem;
+      font-family: 'Amatic Sc';
+      font-weight: 700;
+      color: white;
+      padding: 30px 0% 7px 0;
+      text-align: center; }
+
+.my-forests-options {
+  background-color: #b7decd;
+  width: 100%;
+  height: 100%;
+  border-radius: 3%;
+  padding: 0% 5%; }
+  .my-forests-options nav {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: fit-content;
+    border-bottom: 2px solid white; }
+    .my-forests-options nav a {
+      font-size: 1.5rem;
+      font-family: 'Oswald';
+      font-weight: 400;
+      color: white;
+      padding: 30px 0% 7px 0;
+      text-align: center; }
+
+.options, .game {
+  width: 100%;
+  height: 85%;
+  margin-top: 5%; }
+
+.game {
+  background: url("baby_sprout-22.9a01de32.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 3%;
+  display: grid;
+  grid-template-rows: 1fr 110px; }
+
+.infos-game {
+  grid-row: 2/3;
+  margin: 0 10%;
+  width: 80%;
+  height: 100%; }
+
+.level-container {
+  position: relative;
+  width: 100%;
+  height: 15px;
+  margin-top: 10px;
+  border: solid 2px white;
+  border-radius: 3%;
+  background-color: none; }
+
+.level {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  background-color: white; }
+
+.my-infos, .the-community {
+  display: none; }
+
+/* PLANT A TREE PROFILE */
+input {
+  text-decoration: none;
+  border: none;
+  padding: 0; }
+
+.planttree-form form {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2%;
+  grid-row-gap: 10%; }
+  .planttree-form form label {
+    font-size: 1.5rem;
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: white;
+    text-align: center; }
+    .planttree-form form label .tree-number {
+      text-align: center; }
+
+.plant-submit {
+  text-align: center;
+  width: 100%;
+  height: 45px;
+  background-color: #e1ac4a;
+  text-align: center;
+  border-radius: 5%;
+  box-shadow: 5px 5px rgba(112, 81, 28, 0.6);
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+  font-weight: 400;
+  color: white; }
+  .plant-submit h2 {
+    font-size: 2.1rem;
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: white;
+    padding: 2%; }
+
+.tree-number-container {
+  grid-column: -1/1;
+  padding: 2% 0%; }
+  .tree-number-container input {
+    font-size: 1.5rem;
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: white;
+    padding: 3% 7%;
+    background-color: #11514f;
+    text-align: center;
+    width: 70px;
+    border-radius: 3%; }
+  .tree-number-container p {
+    height: 40px;
+    padding: 0% 7%;
+    display: inline; }
+  .tree-number-container .price {
+    height: 40px;
+    background-color: #11514f;
+    display: inline;
+    padding: 3% 7%;
+    border-radius: 3%;
+    font-size: 1.5rem;
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: white; }
+  .tree-number-container .minus, .tree-number-container .plus {
+    width: 40px;
+    height: 40px;
+    display: inline-block; }

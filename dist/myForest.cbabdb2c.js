@@ -104,8 +104,40 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"myForest.js":[function(require,module,exports) {
+"use strict";
 
+var userId = 1;
+var endpoint = "http://5bfd357c827c3800139ae907.mockapi.io/treefund/user/" + userId + "/donations";
+var donationForm = document.querySelector(".donation-form");
+donationForm.addEventListener("submit", function (e) {
+  /* DONT REFRESH PAGE */
+  e.preventDefault();
+  /* create a Donation Object */
+
+  var donationObject = {
+    category: donationForm.elements.location.value,
+    trees: donationForm.elements.treenumber.value,
+    date: new Date().toDateString()
+  };
+  postDonation(donationObject);
+});
+/* POST THE DONATION TO THE DATABASE */
+
+function postDonation(newDonation) {
+  console.log(newDonation);
+  console.log(endpoint);
+  fetch(endpoint, {
+    method: "post",
+    body: JSON.stringify(newDonation),
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    }
+  }).then(function (res) {
+    return res.json();
+  }).then(function (d) {});
+}
 },{}],"../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -275,4 +307,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","myForest.js"], null)
+//# sourceMappingURL=/myForest.cbabdb2c.map

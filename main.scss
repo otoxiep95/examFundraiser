@@ -55,10 +55,13 @@ body {
   }
 }
 
-.getstarted{
-  @include button(300px, 45px);
-  margin-left: calc(50% - 150px);
+@mixin rectangle($width, $height){
+  background-color: $white_green;
+  width:$width;
+  height:$height;
+    border-radius: 3%;
 }
+
 
 /* MENU HEADER */
 
@@ -117,7 +120,6 @@ path{
   
  h2{
   @include title (2.8rem, white);
-  margin:0;
   width:100%;
   height:100%;
   padding: 25% 15%;
@@ -126,14 +128,51 @@ path{
 }
 }
 
+.getstarted{
+  @include button(300px, 45px);
+  margin-left: calc(50% - 150px);
+}
+
 
 
 
 
 /* LOGIN */
 
-.login-form-modal, .register-form-modal{
-  display: none;
+.cross{
+  width: 70px;
+  height:70px;
+  position: absolute;
+  top:5%;
+  left:5%;
+}
+
+
+label{
+  display:block;
+}
+
+.modal {
+  position:absolute;
+  top: 0;
+  left:0;
+  z-index: 10;
+  padding: 10vw;
+  margin: 10vw;
+  @include rectangle(80vw,80vh);
+  background-color: $yellow_green;
+  opacity: 0.9;
+  @include text (1.8rem, white);
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.login-form-modal {
+  grid-column: 1/2;
+}
+
+.register-form-modal {
+  grid-column: 2/3;
 }
 
 
@@ -174,12 +213,9 @@ p{
   //   grid-column: -1/1;
   // }
 
-  .forest-button{
-   
-    background-color: $white_green;
-    width: 100%;
-    height:500px;
-    border-radius: 3%;
+  .forest-button, .forest-image{
+   @include rectangle(100%,500px);
+    
   a{
     @include title (2.5rem, white);
   }
@@ -196,3 +232,194 @@ p{
   grid-gap:5%;
 
 }
+
+
+/* /////////// PROFILE PAGE ////////////*/
+
+#myForestsHeader{
+  height:10vh;
+  background:none;
+  background-color: $dark_green;
+  svg{ 
+    #logo{
+  path{
+    fill:white;
+  }
+}}
+.menu{
+  a{
+    color:white;
+  }
+}
+}
+
+.myForestsMain{
+  width: 100vw;
+  height: 90vh;
+  padding: 5% 10%;
+  background-color:$dark_green;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:2%;
+  position:fixed;
+  top: 10vh;
+  left: 0;
+  z-index: 10;
+  nav{
+    width:100%;
+    height:10%;
+    display:grid;
+  }
+}
+
+.myForests{
+  @include rectangle(100%,100%);
+  // padding:0% 5%; 
+  nav{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height:fit-content;
+  
+    a{
+      @include title(2.1rem, white);
+      padding: 30px 0% 7px 0;
+      text-align:center;
+    }
+  }
+}
+
+.my-forests-options{
+@include rectangle(100%,100%);
+padding:0% 5%; 
+nav{
+  grid-template-columns: 1fr 1fr 1fr;
+  height:fit-content;
+  border-bottom: 2px solid white;
+  
+a{
+  @include text(1.5rem, white);
+  padding: 30px 0% 7px 0;
+  text-align:center;
+}
+}
+}
+
+.options, .game{
+  width:100%;
+  height:85%;
+  margin-top:5%;
+}
+
+.game{
+  background: url("baby_sprout-22.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 3%;
+  display:grid;
+  grid-template-rows: 1fr 110px;
+}
+
+.infos-game{
+  grid-row: 2/3;
+  margin: 0 10%;
+  width:80%;
+  height:100%;
+}
+
+.level-container{
+  position:relative;
+  width: 100%;
+  height:15px;
+  margin-top: 10px;
+  border: solid 2px white;
+  border-radius: 3%;
+  background-color:none;
+ 
+}
+.level{
+  position:absolute;
+  left:0;
+  top:0;
+  width: 10%;
+  height:100%;
+  background-color: white;
+}
+
+.my-infos, .the-community{
+  display:none;
+}
+
+
+/* PLANT A TREE PROFILE */
+
+input{
+  text-decoration:none;
+  border:none;
+  padding:0;
+}
+
+.planttree-form {
+  form{
+    width:100%;
+    height:100%;
+    padding:5%;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:2%;
+  grid-row-gap: 10%;
+  label{
+    @include text(1.5rem, white);
+    text-align:center;
+    .tree-number{
+      text-align: center;
+    }
+  }
+  }
+}
+
+.plant-submit{
+  text-align:center;
+  @include button(100%, 45px );
+  @include text (1.8rem,white);
+}
+
+.tree-number-container{
+  grid-column: -1/1;
+  padding: 2% 0%;
+  input{
+    @include text(1.5rem,white);
+    padding: 3% 7%;
+    background-color:$dark_green;
+    text-align:center;
+    width:70px;
+    border-radius:3%;
+  }
+ 
+  p{
+    height:40px;
+    padding: 0% 7%;
+    display:inline;
+    
+  }
+  .price{
+    height:40px;
+    background-color:$dark_green;
+    display:inline;
+    padding: 3% 7%;
+    border-radius:3%;
+    @include text(1.5rem,white);
+  }
+
+  .minus, .plus{
+    width: 40px;
+    height:40px;
+    display:inline-block;
+  }
+}
+
+// input[type="radio" i], input[type="checkbox" i] {
+ 
+// }
+
+
+
