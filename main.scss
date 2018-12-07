@@ -388,7 +388,7 @@ input{
   padding: 2% 0%;
   input{
     @include text(1.5rem,white);
-    padding: 3% 7%;
+    padding: 3% 7%; /* ATTENTION PAS RESPONSIVE */
     background-color:$dark_green;
     text-align:center;
     width:70px;

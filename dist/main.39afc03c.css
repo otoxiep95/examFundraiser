@@ -322,6 +322,7 @@ input {
     font-weight: 400;
     color: white;
     padding: 3% 7%;
+    /* ATTENTION PAS RESPONSIVE */
     background-color: #11514f;
     text-align: center;
     width: 70px;

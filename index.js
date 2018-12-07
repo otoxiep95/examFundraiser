@@ -4,6 +4,7 @@ let user_endpoint = "https://5bfd357c827c3800139ae907.mockapi.io/treefund/user";
 
 let main = document.querySelector("main");
 let registerForm = document.querySelector(".register-form");
+
 registerForm.addEventListener("submit", e => {
   e.preventDefault();
   console.log(e);
@@ -68,7 +69,7 @@ function verifyUser(username, password) {
           if (user.password === password) {
             userValid = true;
             console.log("go to user profile id:" + user.id);
-            window.location = "subpage.html?id=" + user.id;
+            window.location = "myforest.html?id=" + user.id;
           }
         }
       });
@@ -87,5 +88,5 @@ function createUser(newUserData) {
     }
   })
     .then(res => res.json())
-    .then(d => {});
+    .then(d => { });
 }
