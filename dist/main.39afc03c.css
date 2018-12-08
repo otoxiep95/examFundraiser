@@ -14,6 +14,9 @@ body {
 :root {
   font-size: 62.5%; }
 
+a:hover {
+  cursor: pointer; }
+
 /* MENU HEADER */
 header {
   width: 100vw;
@@ -196,17 +199,22 @@ main {
     width: 100%;
     height: 10%;
     display: grid; }
+  .myForestsMain a:hover {
+    color: #11514f; }
+  .myForestsMain a:active {
+    color: #e1ac4a; }
 
 .myForests {
   background-color: #b7decd;
   width: 100%;
   height: 100%;
-  border-radius: 3%; }
+  border-radius: 3%;
+  box-shadow: 5px 10px 5px rgba(6, 39, 32, 0.6); }
   .myForests nav {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     height: fit-content; }
     .myForests nav a {
-      font-size: 2.1rem;
+      font-size: 2.5rem;
       font-family: 'Amatic Sc';
       font-weight: 700;
       color: white;
@@ -218,6 +226,7 @@ main {
   width: 100%;
   height: 100%;
   border-radius: 3%;
+  box-shadow: 5px 10px 5px rgba(6, 39, 32, 0.6);
   padding: 0% 5%; }
   .my-forests-options nav {
     grid-template-columns: 1fr 1fr 1fr;
@@ -243,7 +252,7 @@ main {
   background-repeat: no-repeat;
   border-radius: 3%;
   display: grid;
-  grid-template-rows: 1fr 110px; }
+  grid-template-rows: 1fr 130px; }
 
 .infos-game {
   grid-row: 2/3;
@@ -255,7 +264,7 @@ main {
   position: relative;
   width: 100%;
   height: 15px;
-  margin-top: 10px;
+  margin-top: 20px;
   border: solid 2px white;
   border-radius: 3%;
   background-color: none; }
@@ -272,51 +281,24 @@ main {
   display: none; }
 
 /* PLANT A TREE PROFILE */
-input {
-  text-decoration: none;
-  border: none;
-  padding: 0; }
-
 .planttree-form form {
   width: 100%;
   height: 100%;
   padding: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(8, 10%);
   grid-gap: 2%;
-  grid-row-gap: 10%; }
-  .planttree-form form label {
-    font-size: 1.5rem;
-    font-family: 'Oswald';
-    font-weight: 400;
-    color: white;
-    text-align: center; }
-    .planttree-form form label .tree-number {
-      text-align: center; }
+  grid-row-gap: 2%; }
 
-.plant-submit {
-  text-align: center;
-  width: 100%;
-  height: 45px;
-  background-color: #e1ac4a;
-  text-align: center;
-  border-radius: 5%;
-  box-shadow: 5px 5px rgba(112, 81, 28, 0.6);
-  font-size: 1.8rem;
-  font-family: 'Oswald';
-  font-weight: 400;
-  color: white; }
-  .plant-submit h2 {
-    font-size: 2.1rem;
-    font-family: 'Oswald';
-    font-weight: 400;
-    color: white;
-    padding: 2%; }
-
+/* TREE NUMBER */
 .tree-number-container {
   grid-column: -1/1;
   padding: 2% 0%; }
   .tree-number-container input {
+    text-decoration: none;
+    border: none;
+    padding: 0;
     font-size: 1.5rem;
     font-family: 'Oswald';
     font-weight: 400;
@@ -345,3 +327,147 @@ input {
     width: 40px;
     height: 40px;
     display: inline-block; }
+
+/* RADIO BUTTON STYLE */
+.location {
+  align-self: end;
+  font-size: 1.8rem;
+  grid-row: 4/5; }
+
+.countries {
+  grid-row-start: 5; }
+
+.countries2 {
+  grid-row-start: 6; }
+
+/* Hide the browser's default radio button */
+label {
+  display: block;
+  position: relative;
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer; }
+  label h3 {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding: 8%;
+    text-align: center;
+    font-size: 1.8rem; }
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  background-color: #11514f;
+  border-radius: 3%; }
+
+/* On mouse-over, add a grey background color */
+label:hover input ~ .checkmark {
+  background-color: rgba(6, 39, 32, 0.3); }
+
+/* When the radio button is checked, add a orange background */
+label input:checked ~ .checkmark {
+  width: 90%;
+  height: 90%;
+  background-color: #e1ac4a;
+  text-align: center;
+  border-radius: 5%;
+  box-shadow: 5px 5px rgba(112, 81, 28, 0.6); }
+  label input:checked ~ .checkmark h2 {
+    font-size: 2.1rem;
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: white;
+    padding: 2%; }
+
+/* CHECKBOX STYLE */
+.recurrent {
+  align-self: end; }
+
+.checkbox {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  height: 25px;
+  width: 25px;
+  background-color: #11514f; }
+
+/* On mouse-over, add a background color */
+label:hover input ~ .checkbox {
+  background-color: rgba(6, 39, 32, 0.3); }
+
+/* When the checkbox is checked, add a background */
+label input:checked ~ .checkbox {
+  width: 25px;
+  height: 25px;
+  background-color: #e1ac4a;
+  text-align: center;
+  border-radius: 5%;
+  box-shadow: 5px 5px rgba(112, 81, 28, 0.6); }
+  label input:checked ~ .checkbox h2 {
+    font-size: 2.1rem;
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: white;
+    padding: 2%; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+label input:checked ~ .checkbox:after {
+  display: block; }
+
+/* Style the checkmark/indicator */
+label .checkbox:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+/* SUBMIT BUTTON */
+.plant-submit {
+  text-align: center;
+  width: 90%;
+  height: 90%;
+  background-color: #e1ac4a;
+  text-align: center;
+  border-radius: 5%;
+  box-shadow: 5px 5px rgba(112, 81, 28, 0.6);
+  font-size: 1.8rem;
+  font-family: 'Oswald';
+  font-weight: 400;
+  color: white; }
+  .plant-submit h2 {
+    font-size: 2.1rem;
+    font-family: 'Oswald';
+    font-weight: 400;
+    color: white;
+    padding: 2%; }
+
+.plant-submit, .newsletter {
+  grid-row: 8/9;
+  margin: 5%;
+  align-self: end; }

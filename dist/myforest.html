@@ -12,8 +12,11 @@
 </head>
 
 <body>
+
+
   <header id="myForestsHeader">
 
+    <!--LOGO-->
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="70px" height="70px" viewbox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
 
       <g id="logo">
@@ -58,6 +61,7 @@
       </g>
     </svg>
 
+    <!--MENU-->
     <nav class="menu">
       <li>
         <a class="menu_link" href="/index.html">OUR FORESTS</a>
@@ -69,43 +73,62 @@
 
       </li>
     </nav>
+
   </header>
+
+  <!--///////////// MAIN ///////////////////-->
   <main class="myForestsMain">
+
+    <!--///////////// GAME ///////////////////-->
     <div class="myForests">
+
       <nav>
         <a>BRAZIL</a>
         <a>TANZANIA</a>
         <a>USA</a>
         <a>VIETNAM</a>
       </nav>
+
       <div class="game">
-        <!-- <img src="img/trees/baby_sprout-22.svg"> -->
+
         <div class="infos-game">
           <p>5 TREES PLANTED !</p>
           <p>20 TREES LEFT TO BECOME AN INFANT SEEDLING !</p>
+
           <div class="level-container">
             <div class="level"></div>
           </div>
         </div>
 
       </div>
+
     </div>
+
+    <!--///////////// OPTIONS ///////////////////-->
+
     <div class="my-forests-options">
+
       <nav>
         <a>PLANT A TREE</a>
         <a>MY INFORMATIONS</a>
         <a>THE COMMUNITY</a>
-
       </nav>
+
+      <!--///////////// FORM ///////////////////-->
       <div class="planttree-form options">
+
         <form class="donation-form">
-          <label>
+
+          <label class="recurrent">
             One time:
             <input type="radio" name="recurrent" value="oneTime" checked="">
+            <span class="checkbox"></span>
           </label>
-          <label>
+
+          <label class="recurrent">
             Recurrent:
             <input type="radio" name="recurrent" value="recurrent">
+            <span class="checkbox"></span>
           </label>
 
           <div class="tree-number-container">
@@ -116,37 +139,55 @@
             <div class="price">10kr</div>
           </div>
 
-          <h3>Location:</h3>
-          <label> BRAZIL
+          <h3 class="location">Location:</h3>
+
+          <label class="countries">
+            <h3>BRAZIL</h3>
             <input type="radio" name="location" value="Brazil" checked="">
+            <span class="checkmark"></span>
           </label>
-          <label> TANZANIA
+
+          <label class="countries">
+            <h3>TANZANIA</h3>
             <input type="radio" name="location" value="Tanzania">
+            <span class="checkmark"></span>
           </label>
-          <label> USA
+
+          <label class="countries2">
+            <h3>USA</h3>
             <input type="radio" name="location" value="Usa">
+            <span class="checkmark"></span>
           </label>
-          <label> VIETNAM
+
+          <label class="countries2">
+            <h3>VIETNAM</h3>
             <input type="radio" name="location" value="Vietnam">
+            <span class="checkmark"></span>
           </label>
-          <label>
+
+          <label class="newsletter">
             Sign up to the newsletter:
             <input type="checkbox" name="newsletter" checked="">
+            <span class="checkbox"></span>
           </label>
 
           <input class="plant-submit" type="submit" name="plant-submit" value="PLANT !">
 
-
         </form>
       </div>
+
+      <!--///////////// INFOS OPTIONS ///////////////////-->
       <div class="my-infos options">
 
       </div>
+
+      <!--///////////// COMMUNITY OPTIONS ///////////////////-->
       <div class="the-community options">
 
       </div>
     </div>
   </main>
+  <!--///////////// END OF MAIN ///////////////////-->
   <script src="/myForest.cbabdb2c.js"></script>
 </body>
 
