@@ -120,6 +120,11 @@ registerForm.addEventListener("submit", function (e) {
     username: registerForm.elements.iusername.value,
     email: registerForm.elements.iemail.value,
     password: registerForm.elements.ipassword.value,
+    donation: [{
+      category: donationForm.elements.location.value,
+      trees: Number(donationForm.elements.treenumber.value),
+      date: new Date().toDateString()
+    }],
     date: new Date().toDateString()
   };
   checkUsername(registerForm.elements.iusername.value);
@@ -168,7 +173,7 @@ function verifyUser(username, password) {
         if (user.password === password) {
           userValid = true;
           console.log("go to user profile id:" + user.id);
-          window.location = "subpage.html?id=" + user.id;
+          window.location = "myforest.html?id=" + user.id;
         }
       }
     });
@@ -215,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51891" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65238" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

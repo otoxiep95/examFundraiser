@@ -117,12 +117,25 @@ donationForm.addEventListener("submit", function (e) {
 
   var donationObject = {
     category: donationForm.elements.location.value,
-    trees: donationForm.elements.treenumber.value,
-    date: new Date().toDateString()
+    trees: Number(donationForm.elements.treenumber.value),
+    date: new Date().toISOString()
   };
   postDonation(donationObject);
 });
+donationForm.elements.treenumber.addEventListener("input", function (e) {
+  console.log(e);
+  console.log("change");
+  var treeNum = donationForm.elements.treenumber.value;
+  console.log(treeNum);
+  document.querySelector(".price").textContent = treeNum * 10 + "kr";
+});
+
+function getPrice() {
+  var treeNum = donationForm.elements.treenumber.value;
+  console.log(treeNum);
+}
 /* POST THE DONATION TO THE DATABASE */
+
 
 function postDonation(newDonation) {
   console.log(newDonation);
@@ -138,7 +151,7 @@ function postDonation(newDonation) {
     return res.json();
   }).then(function (d) {});
 }
-},{}],"../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -165,7 +178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49468" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65238" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
@@ -307,5 +320,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../../../../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","myForest.js"], null)
+},{}]},{},["../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","myForest.js"], null)
 //# sourceMappingURL=/myForest.cbabdb2c.map

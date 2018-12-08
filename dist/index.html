@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
   <title>Document</title>
-<script src="/main.39afc03c.js"></script></head>
+</head>
 
 <body>
   <header>
@@ -211,8 +211,8 @@
 
           <form class="login-form">
             <h2> LOG IN TO MY FOREST:</h2>
-            <label>USERNAME <input type="text" name="username"></label>
-            <label>PASSWORD <input type="text" name="password"></label>
+            <label>USERNAME <input type="text" name="username" required=""></label>
+            <label>PASSWORD <input type="text" name="password" required=""></label>
             <input type="submit" name="submit" value="login">
           </form>
 
@@ -226,14 +226,57 @@
         <div class="register-form-modal">
           <h2> YOU DON'T HAVE AN ACCOUNT ? <br> GET STARTED & PLANT YOUR FIRST TREE!</h2>
           <form class="register-form">
-            <label> FIRST NAME: <input type="text" name="ifirstname"> </label>
+            <label> FIRST NAME: <input type="text" name="ifirstname" required=""> </label>
             <label for="">
-              LAST NAME: <input type="text" name="ilastname">
+              LAST NAME: <input type="text" name="ilastname" required="">
             </label>
-            <label for=""> USERNAME: <input type="text" name="iusername"> </label>
-            <label for="">EMAIL: <input type="email" name="iemail"></label>
-            <label for="">PASSWORD: <input type="text" name="ipassword"></label>
-            <label for="">Sign up to the newsletter: <input type="checkbox" name="newsletter"> </label> <input type="submit" name="submit" value="register">
+            <label for=""> USERNAME: <input type="text" name="iusername" required=""> </label>
+            <label for="">EMAIL: <input type="email" name="iemail" required=""></label>
+            <label for="">PASSWORD: <input type="text" name="ipassword" required=""></label>
+            <label for="">Sign up to the newsletter: <input type="checkbox" name="newsletter"> </label>
+
+          <div></div>
+          
+            <div>
+            <label>
+              One time:
+              <input type="radio" name="recurrent" value="oneTime" checked="">
+            </label>
+            <label>
+              Recurrent:
+              <input type="radio" name="recurrent" value="recurrent">
+            </label>
+
+            <div class="tree-number-container">
+              <img class="icons minus" src="/plus_minus-20.359487da.svg">
+              <input class="tree-number" type="number" name="treenumber" value="1" min="1" required="">
+              <img class="icons plus" src="/plus_minus-21.b63eb4f1.svg">
+              <p>Trees to plant:</p>
+              <div class="price">10kr</div>
+            </div>
+
+            <h3>Location:</h3>
+            <label>
+              BRAZIL
+              <input type="radio" name="location" value="Brazil" required="" checked="">
+            </label>
+            <label>
+              TANZANIA <input type="radio" name="location" value="Tanzania">
+            </label>
+            <label>
+              USA <input type="radio" name="location" value="Usa">
+            </label>
+            <label>
+              VIETNAM <input type="radio" name="location" value="Vietnam">
+            </label>
+            <label>
+              Sign up to the newsletter:
+              <input type="checkbox" name="newsletter" checked="">
+            </label>
+
+            
+            <input type="submit" name="submit" value="register">
+            </div>
 
             <p>OR USE ANOTHER ACCOUNT:</p>
             <a><img src="/soMe-17.9ee38494.svg" alt="fb"></a>
@@ -341,7 +384,7 @@
     </svg>
   </footer>
 
-  <script src="/fundraiser_code.e31bb0bc.js"></script>
+  <script src="/fundraiserTrees.e31bb0bc.js"></script>
 </body>
 
 </html>

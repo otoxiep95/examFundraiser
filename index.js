@@ -15,6 +15,13 @@ registerForm.addEventListener("submit", e => {
     username: registerForm.elements.iusername.value,
     email: registerForm.elements.iemail.value,
     password: registerForm.elements.ipassword.value,
+    donation: [
+      {
+        category: donationForm.elements.location.value,
+        trees: Number(donationForm.elements.treenumber.value),
+        date: new Date().toDateString()
+      }
+    ],
     date: new Date().toDateString()
   };
   checkUsername(registerForm.elements.iusername.value);
@@ -88,5 +95,5 @@ function createUser(newUserData) {
     }
   })
     .then(res => res.json())
-    .then(d => { });
+    .then(d => {});
 }
